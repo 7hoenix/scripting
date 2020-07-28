@@ -1,4 +1,4 @@
-# How to fish.
+# How to read the manual.
 
 ```bash
 man bash <- If you want to degender the man<ual> pages then add this line to your bashrc: `alias docz=man`
