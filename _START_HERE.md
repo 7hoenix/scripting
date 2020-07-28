@@ -7,9 +7,10 @@ I've generally seen it used for two main goals.
 - Automate big processes with many pieces that go together (yes definitely do this. . . but bash is likely not the "best in class" tool for it).
 - Script your work as you do it.
 
+## Story time from my consulting days
+
 I'd like to share a quick story from my work as a consultant. Pretty much everything about it has been changed but hopefully the essence remains.
 
-```story
 I was tasked with generating a whole bunch of certificates for the many different environments that we were using with my client.
 
 I hadn't done that before so my first step was exploratory. Mostly just figure out how to use the library to generate public keys, etc.
@@ -56,4 +57,3 @@ Anyways. . . theirs a 4th reason.
 What if in the future you are as fast as scripting it as if you had done it manually?
 
 What if you are faster?
-```
