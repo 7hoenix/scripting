@@ -57,6 +57,12 @@ I.e. this is basically the same as running this command in the shell:
 bash < hello_world.bash
 ```
 
+We are using `#!/usr/bin/env bash` rather than `#!/usr/bin/env`
+because the `bash` binary isn't always located in `/usr/bin`.
+`/usr/bin/env` is a tool for running programs. Since the shebang
+requires you to specify the exact path to the program to run, using
+`env` makes the system search for where the `bash` program is located.
+
 ### ls
 
 ```bash
