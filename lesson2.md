@@ -5,7 +5,7 @@ Let's make a script from scratch.
 Copy the below script into your clipboard.
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 
 ls -lah .
 cat $0
@@ -15,30 +15,68 @@ On Mac:
 
 ```bash
 pbpaste > hello_world.bash
+```
+
+On Linux:
+
+ - NOTE: need to have xclip installed
+
+```bash
+xclip -o > hello_world.bash
+```
+
+Next run:
+
+```bash
 chmod +x hello_world.bash
 ./hello_world.bash
 ```
 
 Let's unpack that a bit.
 
+### shebang
+
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 ```
 
 The "#!" is a called a shebang. For a long time I couldn't remember which one came first. . . but just remember
 ha[sh] bang (!) <- ! is commonly referred to as bang in a lot of languages. Hence like bang bang con and stuff.
 
+This is a "magic" byte sequence that Linux like systems recognize and
+know to look at the rest of the line and treat it as the path to a
+binary file to run with the rest of the line as the command line
+arguments.
+
+The rest of the file is then read by that binary as the standard
+input.
+
+I.e. this is basically the same as running this command in the shell:
+
+```bash
+bash < hello_world.bash
+```
+
+We are using `#!/usr/bin/env bash` rather than `#!/usr/bin/env`
+because the `bash` binary isn't always located in `/usr/bin`.
+`/usr/bin/env` is a tool for running programs. Since the shebang
+requires you to specify the exact path to the program to run, using
+`env` makes the system search for where the `bash` program is located.
+
+### ls
+
 ```bash
 ls -lah .
 ```
 
-Check all file permissions. Note the x's on the left. . . the chmod command you used updated that.
+Check all file permissions. Note the x's on the left of the output. . . the chmod command you used updated that.
 
+### cat
 
 ```bash
 cat $0
 ```
 
-Read a file. The $0 is a nifty piece of syntax that means: "The path to the actual script file itself".
+Print out this file. The $0 is a nifty piece of syntax that means: "The path to the actual script file itself".
 
 Try changing stuff if you want.
