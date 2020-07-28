@@ -21,6 +21,16 @@ To check file permissions (to make sure that you do have execute permissions) ru
 ls -lah
 ```
 
+## Quick Start
+
+You may also use the provided template:
+
+```bash
+cp scripts/_TEMPLATE.bash some_script.bash
+chmod +x some_script.bash
+./some_script.bash # Should output a message when run.
+```
+
 ## Show us what you got
 
 Consider opening a PR to merge it into the scripts directory here.
